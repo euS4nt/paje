@@ -1,0 +1,1992 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal Trainer em Ferraz de Vasconcelos. Treinos personalizados, acompanhamento profissional e estratégia para você evoluir de verdade na Musclefit, Cidade Kemel."
+    />
+    <meta
+      name="keywords"
+      content="Personal Trainer, Personal Trainer Ferraz de Vasconcelos, Personal Trainer Cidade Kemel, Treino personalizado, Academia, Musclefit, Treino presencial"
+    />
+
+    <title>Jonathan Silva | Personal Trainer em Ferraz de Vasconcelos</title>
+
+    <!-- Open Graph para Redes Sociais -->
+    <meta property="og:title" content="Jonathan Silva | Personal Trainer" />
+    <meta
+      property="og:description"
+      content="Seu treino. Seu objetivo. Seu resultado. Agende seu horário na Musclefit em Ferraz de Vasconcelos."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- CSS -->
+    <style>
+      /* ==========================================================================
+   Variáveis e Reset
+   ========================================================================== */
+      :root {
+        --color-bg: #080808;
+        --color-bg-alt: #111111;
+        --color-bg-dark: #181818;
+        --color-text: #ffffff;
+        --color-text-muted: #bdbdbd;
+        --color-primary: #25d366;
+        /* WhatsApp Green */
+        --color-primary-dark: #1da851;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Open Sans", sans-serif;
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-glow: 0 0 20px rgba(37, 211, 102, 0.3);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ==========================================================================
+   Tipografia e Utilitários
+   ========================================================================== */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+      }
+
+      .highlight {
+        color: var(--color-primary);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mt-3 {
+        margin-top: 1rem;
+      }
+
+      .mt-4 {
+        margin-top: 2rem;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .z-10 {
+        z-index: 10;
+      }
+
+      .bg-darker {
+        background-color: var(--color-bg-alt);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section-padding {
+        padding: 6rem 0;
+      }
+
+      /* ==========================================================================
+   Botões
+   ========================================================================== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        transition: var(--transition-smooth);
+        cursor: pointer;
+        border: 2px solid transparent;
+        gap: 10px;
+      }
+
+      .btn-primary {
+        background-color: var(--color-primary);
+        color: #000;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--color-primary-dark);
+        box-shadow: var(--shadow-glow);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        border-color: var(--color-text-muted);
+        color: var(--color-text);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--color-text);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      .btn-large {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
+      }
+
+      /* ==========================================================================
+   Header & Navegação
+   ========================================================================== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 1.5rem 0;
+        transition: var(--transition-smooth);
+        background: transparent;
+      }
+
+      header.scrolled {
+        background: rgba(8, 8, 8, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 1rem 0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--color-text);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-list {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      .nav-link {
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: var(--transition-smooth);
+      }
+
+      .nav-link:hover {
+        color: var(--color-primary);
+      }
+
+      /* Hamburger Mobile */
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: var(--transition-smooth);
+        background-color: var(--color-text);
+      }
+
+      /* ==========================================================================
+   Hero Section
+   ========================================================================== */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+        color: var(--color-text-muted);
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        color: var(--color-text-muted);
+        margin-bottom: 1rem;
+        max-width: 90%;
+      }
+
+      .hero-info {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 2.5rem;
+        color: var(--color-text);
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        z-index: 2;
+        position: relative;
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          black 80%,
+          transparent 100%
+        );
+      }
+
+      .hero-glow {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: var(--color-primary);
+        filter: blur(150px);
+        opacity: 0.3;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateZ(0);
+        /* GPU acceleration */
+        will-change: transform;
+      }
+
+      .floating-card {
+        position: absolute;
+        background: rgba(24, 24, 24, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .card-students {
+        top: 10%;
+        right: -5%;
+      }
+
+      .card-location {
+        bottom: 20%;
+        left: -5%;
+      }
+
+      .card-icon {
+        font-size: 1.5rem;
+      }
+
+      .card-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-text strong {
+        font-size: 1.1rem;
+        color: var(--color-primary);
+      }
+
+      .card-text span {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+      }
+
+      .arrow-down {
+        margin-top: 5px;
+        animation: bounceDown 2s infinite;
+      }
+
+      /* ==========================================================================
+   Benefícios
+   ========================================================================== */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .benefit-card {
+        background: var(--color-bg-alt);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.02);
+        transition: var(--transition-smooth);
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(37, 211, 102, 0.3);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .benefit-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .benefit-card .icon i,
+      .card-icon i,
+      .marker i {
+        color: var(--color-primary);
+      }
+
+      .card-icon i {
+        font-size: 1.4rem;
+      }
+
+      .stars i {
+        color: var(--color-primary);
+        margin-right: 4px;
+      }
+
+      .benefit-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .benefit-card p {
+        color: var(--color-text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* ==========================================================================
+   Sobre Mim
+   ========================================================================== */
+      .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        border-radius: 20px;
+        position: relative;
+        z-index: 2;
+        transition: transform 0.5s ease;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.02);
+      }
+
+      .about-glow {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background: var(--color-primary);
+        filter: blur(100px);
+        opacity: 0.2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateZ(0);
+        /* GPU acceleration */
+        will-change: transform;
+        z-index: 1;
+      }
+
+      .about-name {
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .about-credentials {
+        color: var(--color-primary);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .about-text {
+        color: var(--color-text-muted);
+        margin-bottom: 1rem;
+      }
+
+      .about-highlights {
+        list-style: none;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .about-highlights li {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      /* ==========================================================================
+   Experiência / Contador
+   ========================================================================== */
+      .authority {
+        background: linear-gradient(
+          180deg,
+          var(--color-bg) 0%,
+          var(--color-bg-alt) 100%
+        );
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .counter-number {
+        font-size: clamp(4rem, 8vw, 6rem);
+        font-weight: 800;
+        font-family: var(--font-heading);
+        color: var(--color-primary);
+        line-height: 1;
+        text-shadow: var(--shadow-glow);
+      }
+
+      .counter-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 1rem;
+      }
+
+      .authority-tags {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50px;
+        font-size: 0.9rem;
+      }
+
+      /* ==========================================================================
+   Como Funciona
+   ========================================================================== */
+      .steps-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+        position: relative;
+      }
+
+      .steps-container::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 1;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--color-bg-dark);
+        border: 2px solid var(--color-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.2rem;
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
+      }
+
+      .step h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .step p {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+      }
+
+      /* ==========================================================================
+   Serviços
+   ========================================================================== */
+      .services-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 4rem;
+        align-items: center;
+      }
+
+      .services-img-wrapper img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .service-item {
+        border-left: 3px solid var(--color-primary);
+        padding-left: 1.5rem;
+      }
+
+      .service-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .service-item p {
+        color: var(--color-text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* ==========================================================================
+   Avaliações (Marquee)
+   ========================================================================== */
+      .testimonials {
+        overflow: hidden;
+      }
+
+      .marquee-wrapper {
+        position: relative;
+        width: 100%;
+        margin-top: 4rem;
+        overflow: hidden;
+      }
+
+      .marquee-wrapper::before,
+      .marquee-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 2;
+      }
+
+      .marquee-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, var(--color-bg), transparent);
+      }
+
+      .marquee-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, var(--color-bg), transparent);
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        gap: 2rem;
+        animation: scroll 35s linear infinite;
+        will-change: transform;
+        /* GPU Optimization */
+      }
+
+      .marquee-wrapper:hover .marquee-track {
+        animation-play-state: paused;
+      }
+
+      .testimonial-card {
+        background: var(--color-bg-alt);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        width: 350px;
+        flex-shrink: 0;
+        transition: var(--transition-smooth);
+      }
+
+      .testimonial-card:hover {
+        border-color: rgba(37, 211, 102, 0.3);
+        transform: translateY(-5px);
+      }
+
+      .stars {
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .quote {
+        font-style: italic;
+        color: var(--color-text-muted);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .author {
+        display: block;
+        font-family: var(--font-heading);
+      }
+
+      .role {
+        font-size: 0.8rem;
+        color: var(--color-primary);
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translate3d(0, 0, 0);
+          /* Hardware Acceleration */
+        }
+
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      /* ==========================================================================
+   CTA Intermediário
+   ========================================================================== */
+      .mid-cta {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        overflow: hidden;
+      }
+
+      .mid-cta-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .mid-cta-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mid-cta-bg .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(8, 8, 8, 0.85);
+      }
+
+      /* ==========================================================================
+   Local (Map Marker)
+   ========================================================================== */
+      .location-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--color-bg-alt);
+        padding: 4rem 2rem;
+        border-radius: 20px;
+        margin-top: 3rem;
+        border: 1px solid rgba(255, 255, 255, 0.02);
+      }
+
+      .map-marker-container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .marker {
+        font-size: 3rem;
+        position: relative;
+        z-index: 2;
+        animation: bounce 2s infinite;
+      }
+
+      .pulse-ring {
+        position: absolute;
+        width: 40px;
+        height: 10px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        top: 80%;
+        z-index: 1;
+        opacity: 0;
+        animation: mapPulse 2s infinite ease-out;
+      }
+
+      .pulse-ring.delay {
+        animation-delay: 1s;
+      }
+
+      .location-info {
+        text-align: center;
+      }
+
+      .location-info h3 {
+        font-size: 1.5rem;
+        color: var(--color-primary);
+      }
+
+      .location-info h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      .location-info p {
+        color: var(--color-text-muted);
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* ==========================================================================
+   Guia de Contato
+   ========================================================================== */
+      .guide-steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .guide-steps .divider {
+        color: var(--color-primary);
+      }
+
+      /* ==========================================================================
+   CTA Final
+   ========================================================================== */
+      .final-cta {
+        background: var(--color-bg-dark);
+        overflow: hidden;
+      }
+
+      .final-cta-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 600px;
+      }
+
+      .final-cta-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .final-cta-content {
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .final-cta-content h2 {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        margin-bottom: 1rem;
+      }
+
+      .final-cta-content p {
+        font-size: 1.2rem;
+        color: var(--color-text-muted);
+      }
+
+      /* ==========================================================================
+   Footer
+   ========================================================================== */
+      .footer {
+        background: #000;
+        padding: 4rem 0 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-info p {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      .footer-info .logo {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: var(--transition-smooth);
+        line-height: 2;
+      }
+
+      .footer-links a:hover {
+        color: var(--color-primary);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .footer-bottom p {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.8rem;
+      }
+
+      .footer-bottom .final-phrase {
+        font-style: italic;
+        margin-top: 0.5rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* ==========================================================================
+   Botões Flutuantes (WhatsApp & Instagram)
+   ========================================================================== */
+      .floating-buttons {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 9999;
+      }
+
+      .floating-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        transition: var(--transition-smooth);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .floating-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .floating-btn .tooltip {
+        position: absolute;
+        right: 75px;
+        background: #000;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-smooth);
+      }
+
+      .floating-btn:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .floating-whatsapp {
+        background-color: var(--color-primary);
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        animation: floatPulse 2s infinite;
+      }
+
+      .floating-instagram {
+        background: linear-gradient(
+          45deg,
+          #f58529 0%,
+          #dd2a7b 30%,
+          #8134af 60%,
+          #515bd4 100%
+        );
+        box-shadow: 0 4px 20px rgba(221, 42, 123, 0.4);
+      }
+
+      /* ==========================================================================
+   Animações
+   ========================================================================== */
+      .btn-pulse {
+        animation: btnPulse 2s infinite;
+      }
+
+      @keyframes btnPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      @keyframes floatPulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      @keyframes bounceDown {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(10px);
+        }
+
+        60% {
+          transform: translateY(5px);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes mapPulse {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 0.5;
+        }
+
+        100% {
+          transform: scale(3);
+          opacity: 0;
+        }
+      }
+
+      .pulse-soft {
+        animation: floatSoft 4s ease-in-out infinite;
+      }
+
+      @keyframes floatSoft {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Scroll Reveal */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .fade-left {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .fade-right {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .is-visible {
+        opacity: 1;
+        transform: translate(0);
+      }
+
+      .delay-1 {
+        transition-delay: 0.1s;
+      }
+
+      .delay-2 {
+        transition-delay: 0.2s;
+      }
+
+      .delay-3 {
+        transition-delay: 0.3s;
+      }
+
+      .delay-4 {
+        transition-delay: 0.4s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+
+        .marquee-track {
+          animation: none;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .marquee-wrapper::before,
+        .marquee-wrapper::after {
+          display: none;
+        }
+      }
+
+      /* Responsividade */
+      @media (max-width: 992px) {
+        .hero-container,
+        .about-container,
+        .services-layout,
+        .final-cta-split {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-image-wrapper,
+        .about-image,
+        .services-img-wrapper {
+          order: -1;
+        }
+
+        .hero-image-wrapper {
+          height: 400px;
+        }
+
+        .card-students {
+          top: 5%;
+          right: 0;
+        }
+
+        .card-location {
+          bottom: 5%;
+          left: 0;
+        }
+
+        .steps-container {
+          grid-template-columns: 1fr;
+        }
+
+        .steps-container::before {
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          width: 2px;
+          height: 100%;
+          transform: translateX(-50%);
+        }
+
+        .final-cta-content {
+          padding: 3rem 1.5rem;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          flex-direction: column;
+          background: var(--color-bg);
+          width: 100%;
+          height: calc(100vh - 70px);
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+          padding-top: 2rem;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .nav-list {
+          flex-direction: column;
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        .section-padding {
+          padding: 4rem 0;
+        }
+
+        .about-highlights {
+          grid-template-columns: 1fr;
+        }
+
+        .guide-steps span {
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        .guide-steps .divider {
+          display: none;
+        }
+      }
+    </style>
+    <!-- Font Awesome (icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <div class="container header-container">
+        <a href="#" class="logo">Jonathan Silva</a>
+
+        <nav class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#inicio" class="nav-link">Início</a></li>
+            <li><a href="#sobre" class="nav-link">Sobre mim</a></li>
+            <li><a href="#servicos" class="nav-link">Treinos</a></li>
+            <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
+            <li><a href="#local" class="nav-link">Local</a></li>
+          </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="inicio" class="hero">
+        <div class="container hero-container">
+          <div class="hero-content fade-up">
+            <span class="badge">PERSONAL TRAINER</span>
+            <h1 class="hero-title">
+              Seu treino. Seu objetivo.
+              <span class="highlight">Seu resultado.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Treinos personalizados, acompanhamento profissional e estratégia
+              para você evoluir de verdade.
+            </p>
+            <p class="hero-info">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              Atendimento presencial • Ferraz de Vasconcelos - SP
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#" class="btn btn-primary wapp-link"
+                >AGENDAR MEU TREINO</a
+              >
+              <a href="#sobre" class="btn btn-secondary"
+                >CONHECER MEU TRABALHO</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper fade-left">
+            <img
+              src="assets/[FOTO_PERSONAL_1]"
+              alt="Jonathan Silva - Personal Trainer"
+              class="hero-img"
+            />
+            <div class="floating-card card-students pulse-soft">
+              <span class="card-icon"
+                ><i class="fa-solid fa-users" aria-hidden="true"></i
+              ></span>
+              <div class="card-text">
+                <strong>+150 alunos</strong>
+                <span>atendidos</span>
+              </div>
+            </div>
+            <div class="floating-card card-location pulse-soft">
+              <span class="card-icon"
+                ><i class="fa-solid fa-location-dot" aria-hidden="true"></i
+              ></span>
+              <div class="card-text">
+                <strong>Musclefit</strong>
+                <span>Ferraz de Vasconcelos</span>
+              </div>
+            </div>
+            <div class="hero-glow"></div>
+          </div>
+        </div>
+        <a href="#beneficios" class="scroll-indicator">
+          <span>Role para conhecer</span>
+          <div class="arrow-down">
+            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+          </div>
+        </a>
+      </section>
+
+      <!-- BENEFÍCIOS -->
+      <section id="beneficios" class="benefits section-padding">
+        <div class="container">
+          <div class="section-header text-center fade-up">
+            <h2>
+              Treine com propósito.
+              <span class="highlight">Evolua com estratégia.</span>
+            </h2>
+          </div>
+          <div class="benefits-grid">
+            <div class="benefit-card fade-up delay-1">
+              <div class="icon">
+                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              </div>
+              <h3>Treino Personalizado</h3>
+              <p>Treinos planejados de acordo com seus objetivos.</p>
+            </div>
+            <div class="benefit-card fade-up delay-2">
+              <div class="icon">
+                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+              </div>
+              <h3>Acompanhamento Individual</h3>
+              <p>Orientação durante os exercícios e correção da execução.</p>
+            </div>
+            <div class="benefit-card fade-up delay-3">
+              <div class="icon">
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+              </div>
+              <h3>Planejamento</h3>
+              <p>Estratégia de treino pensada para sua evolução.</p>
+            </div>
+            <div class="benefit-card fade-up delay-4">
+              <div class="icon">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+              </div>
+              <h3>Foco em Resultados</h3>
+              <p>Acompanhamento para manter sua evolução constante.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE MIM -->
+      <section id="sobre" class="about section-padding">
+        <div class="container about-container">
+          <div class="about-image fade-right">
+            <img
+              src="assets/[FOTO_PERSONAL_2]"
+              alt="Sobre Jonathan Silva"
+              loading="lazy"
+            />
+            <div class="about-glow"></div>
+          </div>
+          <div class="about-content fade-left">
+            <h2>
+              Mais do que um treino.
+              <span class="highlight">Um acompanhamento de verdade.</span>
+            </h2>
+            <h3 class="about-name">Jonathan Silva</h3>
+            <p class="about-credentials">
+              Personal Trainer | Formação em Biomecânica
+            </p>
+            <p class="about-text">
+              "Meu objetivo é ajudar cada aluno a treinar de forma mais
+              eficiente, segura e consistente, respeitando seus objetivos e sua
+              evolução."
+            </p>
+            <p class="about-text">
+              [EXPERIÊNCIA] - Ao longo da minha carreira, desenvolvi métodos
+              focados na biomecânica e na hipertrofia consciente.
+            </p>
+
+            <ul class="about-highlights">
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i> +150 alunos
+                atendidos
+              </li>
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i> Treinos
+                personalizados
+              </li>
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i> Atendimento
+                individual
+              </li>
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                Acompanhamento próximo
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIÊNCIA / AUTORIDADE -->
+      <section class="authority section-padding text-center">
+        <div class="container">
+          <div class="counter-box fade-up">
+            <div class="counter-number">
+              +<span id="student-counter" data-target="150">0</span>
+            </div>
+            <p class="counter-text">Alunos atendidos ao longo da carreira</p>
+          </div>
+          <div class="authority-tags fade-up delay-1">
+            <span class="tag">Treinos personalizados</span>
+            <span class="tag">Acompanhamento individual</span>
+            <span class="tag">Foco em evolução</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section id="como-funciona" class="how-it-works section-padding">
+        <div class="container">
+          <div class="section-header text-center fade-up">
+            <h2>Começar é mais simples do que você imagina.</h2>
+          </div>
+          <div class="steps-container">
+            <div class="step fade-up delay-1">
+              <div class="step-number">01</div>
+              <h3>Entre em contato</h3>
+              <p>Clique no WhatsApp e fale diretamente comigo.</p>
+            </div>
+            <div class="step fade-up delay-2">
+              <div class="step-number">02</div>
+              <h3>Converse comigo</h3>
+              <p>Conte seus objetivos e o que você busca.</p>
+            </div>
+            <div class="step fade-up delay-3">
+              <div class="step-number">03</div>
+              <h3>Definimos seu treino</h3>
+              <p>Encontramos a melhor estratégia para você.</p>
+            </div>
+            <div class="step fade-up delay-4">
+              <div class="step-number">04</div>
+              <h3>Comece sua evolução</h3>
+              <p>Agendamos seu horário e começamos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TREINAMENTOS / SERVIÇOS -->
+      <section id="servicos" class="services section-padding">
+        <div class="container">
+          <div class="section-header fade-up">
+            <h2>Um treino pensado para você.</h2>
+          </div>
+          <div class="services-layout">
+            <div class="services-img-wrapper fade-right">
+              <img
+                src="assets/[FOTO_PERSONAL_3]"
+                alt="Treinamento com Jonathan Silva"
+                loading="lazy"
+              />
+            </div>
+            <div class="services-grid">
+              <div class="service-item fade-left delay-1">
+                <h3>Treino Personalizado</h3>
+                <p>Treinos desenvolvidos de acordo com seus objetivos.</p>
+              </div>
+              <div class="service-item fade-left delay-2">
+                <h3>Acompanhamento Individual</h3>
+                <p>Orientação e correção durante os exercícios.</p>
+              </div>
+              <div class="service-item fade-left delay-3">
+                <h3>Planejamento de Treino</h3>
+                <p>Estratégias para tornar sua evolução mais consistente.</p>
+              </div>
+              <div class="service-item fade-left delay-4">
+                <h3>Evolução Contínua</h3>
+                <p>
+                  Acompanhamento da sua jornada e ajustes quando necessário.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVALIAÇÕES (MARQUEE) -->
+      <section id="avaliacoes" class="testimonials section-padding">
+        <div class="container text-center fade-up">
+          <h2>Quem treina comigo, <span class="highlight">recomenda.</span></h2>
+        </div>
+
+        <div class="marquee-wrapper fade-up delay-1">
+          <div class="marquee-track" id="marquee">
+            <!-- Cards de Avaliação -->
+            <div class="testimonial-card">
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="quote">
+                "Comecei sem muita experiência e já percebi uma grande evolução
+                nos meus treinos. O acompanhamento fez toda diferença."
+              </p>
+              <strong class="author">João Silva</strong>
+              <span class="role">Aluno de Personal Training</span>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="quote">
+                "Atenção aos detalhes e correção de postura impecáveis. Sinto
+                muito mais segurança ao pegar peso agora."
+              </p>
+              <strong class="author">Marcos Costa</strong>
+              <span class="role">Aluno Presencial</span>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="quote">
+                "Sempre tive dificuldade em manter a constância, mas com o
+                treino personalizado finalmente criei gosto pela academia."
+              </p>
+              <strong class="author">Lucas Almeida</strong>
+              <span class="role">Aluno de Personal Training</span>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="quote">
+                "Profissional excelente! Treinos dinâmicos e sempre focados no
+                meu objetivo de hipertrofia. Recomendo muito!"
+              </p>
+              <strong class="author">Rafael Mendes</strong>
+              <span class="role">Aluno de Personal Training</span>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="quote">
+                "Resultados visíveis em poucos meses. O suporte no dia a dia e
+                durante as execuções não tem preço."
+              </p>
+              <strong class="author">Pedro Henrique</strong>
+              <span class="role">Aluno Presencial</span>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="quote">
+                "A melhor decisão que tomei. O treino é desafiador na medida
+                certa e o ambiente é muito motivador."
+              </p>
+              <strong class="author">Felipe Santos</strong>
+              <span class="role">Aluno de Personal Training</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA INTERMEDIÁRIO -->
+      <section class="mid-cta section-padding">
+        <div class="mid-cta-bg">
+          <img
+            src="assets/[FOTO_PERSONAL_4]"
+            alt="Pronto para começar"
+            loading="lazy"
+          />
+          <div class="overlay"></div>
+        </div>
+        <div class="container text-center relative z-10 fade-up">
+          <h2>Pronto para começar a sua evolução?</h2>
+          <p>
+            Mais de 150 alunos já deram o primeiro passo. Agora pode ser a sua
+            vez.
+          </p>
+          <a href="#servicos" class="btn btn-primary btn-pulse mt-4"
+            >CONHECER MEUS TREINOS</a
+          >
+        </div>
+      </section>
+
+      <!-- LOCAL DE ATENDIMENTO -->
+      <section id="local" class="location section-padding">
+        <div class="container">
+          <div class="section-header text-center fade-up">
+            <h2>Onde você pode treinar comigo</h2>
+          </div>
+
+          <div class="location-box fade-up delay-1">
+            <div class="map-marker-container">
+              <div class="pulse-ring"></div>
+              <div class="pulse-ring delay"></div>
+              <div class="marker">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="location-info">
+              <h3>Musclefit</h3>
+              <h4>Cidade Kemel — Ferraz de Vasconcelos</h4>
+              <p>
+                R. Osvaldo Abraão, 1462 - Cidade Kemel, Ferraz de Vasconcelos -
+                SP, 08542-140
+              </p>
+              <a
+                href="https://maps.app.goo.gl/N4V453zQUnBfydqL7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary mt-3"
+                >VER NO GOOGLE MAPS</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GUIA DE CONTATO -->
+      <section class="contact-guide section-padding bg-darker">
+        <div class="container text-center">
+          <h2 class="fade-up">Vamos marcar seu treino?</h2>
+          <div class="guide-steps mt-4 fade-up delay-1">
+            <span>01 — Clique no WhatsApp</span>
+            <span class="divider">/</span>
+            <span>02 — Conte seus objetivos</span>
+            <span class="divider">/</span>
+            <span>03 — Escolha o melhor horário</span>
+            <span class="divider">/</span>
+            <span>04 — Comece seu treino</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="final-cta">
+        <div class="final-cta-split">
+          <div class="final-cta-img fade-right">
+            <img
+              src="assets/[FOTO_PERSONAL_5]"
+              alt="Seu próximo nível"
+              loading="lazy"
+            />
+          </div>
+          <div class="final-cta-content fade-left">
+            <h2>Seu próximo nível começa no próximo treino.</h2>
+            <p>Não espere o momento perfeito. Dê o primeiro passo.</p>
+            <a
+              href="#"
+              class="btn btn-primary btn-large btn-pulse wapp-link mt-4"
+            >
+              <i
+                class="fa-brands fa-whatsapp"
+                aria-hidden="true"
+                style="font-size: 1.1rem"
+              ></i>
+              AGENDAR MEU TREINO PELO WHATSAPP
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-info">
+          <a href="#" class="logo">[NOME DO PERSONAL]</a>
+          <p>Personal Trainer</p>
+          <p>Ferraz de Vasconcelos - SP</p>
+          <p>Musclefit — Cidade Kemel</p>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre mim</a></li>
+            <li><a href="#servicos">Treinos</a></li>
+            <li><a href="#avaliacoes">Avaliações</a></li>
+            <li><a href="#local">Local</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 [NOME DO PERSONAL]. Todos os direitos reservados.</p>
+        <p class="final-phrase">"Seu objetivo começa com uma decisão."</p>
+      </div>
+    </footer>
+
+    <!-- BOTÕES FLUTUANTES (WHATSAPP E INSTAGRAM) -->
+    <div class="floating-buttons">
+      <a
+        href="[LINK DO SEU INSTAGRAM AQUI]"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-btn floating-instagram"
+        aria-label="Siga no Instagram"
+      >
+        <span class="tooltip">Siga no Instagram</span>
+        <i
+          class="fa-brands fa-instagram"
+          aria-hidden="true"
+          style="font-size: 1.4rem"
+        ></i>
+      </a>
+      <a
+        href="#"
+        class="floating-btn floating-whatsapp wapp-link"
+        aria-label="Fale comigo no WhatsApp"
+      >
+        <span class="tooltip">Agende seu treino</span>
+        <i
+          class="fa-brands fa-whatsapp"
+          aria-hidden="true"
+          style="font-size: 1.4rem"
+        ></i>
+      </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      /**
+       * Lógica principal da Landing Page do Personal Trainer
+       * Nenhuma dependência externa. Vanilla JS.
+       */
+
+      document.addEventListener("DOMContentLoaded", () => {
+        /* ==========================================================================
+                       CONFIGURAÇÕES EDITÁVEIS
+                       ========================================================================== */
+        const WHATSAPP_NUMBER = "5511999999999"; // Substitua pelo número real
+        const WHATSAPP_MESSAGE = encodeURIComponent(
+          "Olá! Vi seu site e gostaria de saber mais sobre os treinos e agendar um horário.",
+        );
+        const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+
+        /* ==========================================================================
+                       1. Injetar Link do WhatsApp em todos os CTAs
+                       ========================================================================== */
+        const wappLinks = document.querySelectorAll(".wapp-link");
+        wappLinks.forEach((link) => {
+          link.setAttribute("href", WHATSAPP_URL);
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        });
+
+        /* ==========================================================================
+                       2. Menu Mobile e Header Sticky
+                       ========================================================================== */
+        const header = document.getElementById("header");
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.getElementById("nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          });
+        });
+
+        /* ==========================================================================
+                       3. Intersection Observer (Scroll Animations)
+                       ========================================================================== */
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (!prefersReducedMotion) {
+          const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.15,
+          };
+          const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            observerOptions,
+          );
+
+          const animatedElements = document.querySelectorAll(
+            ".fade-up, .fade-left, .fade-right",
+          );
+          animatedElements.forEach((el) => revealObserver.observe(el));
+        } else {
+          document
+            .querySelectorAll(".fade-up, .fade-left, .fade-right")
+            .forEach((el) => {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            });
+        }
+
+        /* ==========================================================================
+                       4. Contador Animado (+150 Alunos)
+                       ========================================================================== */
+        const counterElement = document.getElementById("student-counter");
+        let counted = false;
+
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting && !counted) {
+              counted = true;
+              startCounter(counterElement);
+            }
+          },
+          { threshold: 0.5 },
+        );
+
+        if (counterElement) {
+          counterObserver.observe(counterElement);
+        }
+
+        function startCounter(el) {
+          const target = parseInt(el.getAttribute("data-target"));
+          const duration = 2000;
+          const stepTime = Math.abs(Math.floor(duration / target));
+          let current = 0;
+
+          const timer = setInterval(() => {
+            current += 1;
+            el.textContent = current;
+            if (current >= target) {
+              clearInterval(timer);
+              el.textContent = target;
+            }
+          }, stepTime);
+        }
+
+        /* ==========================================================================
+                       5. Marquee/Carrossel Infinito Sem Travamentos
+                       ========================================================================== */
+        const marqueeTrack = document.getElementById("marquee");
+
+        if (marqueeTrack && !prefersReducedMotion) {
+          const marqueeContent = marqueeTrack.innerHTML;
+          marqueeTrack.innerHTML = marqueeContent + marqueeContent;
+        }
+      });
+    </script>
+  </body>
+</html>
