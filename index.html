@@ -28,18 +28,18 @@
    Variáveis e Reset
    ========================================================================== */
       :root {
-        --color-bg: #080808;
-        --color-bg-alt: #111111;
-        --color-bg-dark: #181818;
-        --color-text: #ffffff;
-        --color-text-muted: #bdbdbd;
-        --color-primary: #25d366;
-        /* WhatsApp Green */
-        --color-primary-dark: #1da851;
+        --color-bg: #ffffff;
+        --color-bg-alt: #f8fafc;
+        --color-bg-dark: #f1f5f9;
+        --color-text: #0f172a;
+        --color-text-muted: #475569;
+        --color-primary: #0066cc;
+        --color-primary-dark: #004c99;
+        --color-border: #e2e8f0;
         --font-heading: "Montserrat", sans-serif;
         --font-body: "Open Sans", sans-serif;
         --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        --shadow-glow: 0 0 20px rgba(37, 211, 102, 0.3);
+        --shadow-glow: 0 4px 14px 0 rgba(0, 102, 204, 0.15);
       }
 
       * {
@@ -61,6 +61,10 @@
         overflow-x: hidden;
       }
 
+      section {
+        border-bottom: 1px solid var(--color-border);
+      }
+
       /* ==========================================================================
    Tipografia e Utilitários
    ========================================================================== */
@@ -71,6 +75,7 @@
         font-family: var(--font-heading);
         font-weight: 700;
         line-height: 1.2;
+        color: var(--color-text);
       }
 
       h2 {
@@ -139,7 +144,7 @@
 
       .btn-primary {
         background-color: var(--color-primary);
-        color: #000;
+        color: #ffffff;
       }
 
       .btn-primary:hover {
@@ -150,13 +155,14 @@
 
       .btn-secondary {
         background-color: transparent;
-        border-color: var(--color-text-muted);
-        color: var(--color-text);
+        border-color: var(--color-primary);
+        color: var(--color-primary);
       }
 
       .btn-secondary:hover {
-        border-color: var(--color-text);
-        background-color: rgba(255, 255, 255, 0.05);
+        border-color: var(--color-primary-dark);
+        background-color: rgba(0, 102, 204, 0.05);
+        color: var(--color-primary-dark);
       }
 
       .btn-large {
@@ -179,12 +185,12 @@
       }
 
       header.scrolled {
-        background: rgba(8, 8, 8, 0.85);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid var(--color-border);
         padding: 1rem 0;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       }
 
       .header-container {
@@ -201,6 +207,10 @@
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2px;
+      }
+
+      header.scrolled .logo {
+        color: var(--color-text);
       }
 
       .nav-menu {
@@ -265,14 +275,14 @@
       .badge {
         display: inline-block;
         padding: 0.4rem 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(0, 102, 204, 0.08);
+        border: 1px solid rgba(0, 102, 204, 0.15);
         border-radius: 50px;
         font-size: 0.8rem;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 2px;
         margin-bottom: 1.5rem;
-        color: var(--color-text-muted);
+        color: var(--color-primary);
       }
 
       .hero-title {
@@ -329,7 +339,7 @@
         height: 300px;
         background: var(--color-primary);
         filter: blur(150px);
-        opacity: 0.3;
+        opacity: 0.08;
         z-index: 1;
         top: 50%;
         left: 50%;
@@ -340,17 +350,17 @@
 
       .floating-card {
         position: absolute;
-        background: rgba(24, 24, 24, 0.8);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--color-border);
         padding: 1rem;
         border-radius: 12px;
         display: flex;
         align-items: center;
         gap: 1rem;
         z-index: 3;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       }
 
       .card-students {
@@ -415,14 +425,14 @@
         background: var(--color-bg-alt);
         padding: 2rem;
         border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--color-border);
         transition: var(--transition-smooth);
       }
 
       .benefit-card:hover {
         transform: translateY(-10px);
-        border-color: rgba(37, 211, 102, 0.3);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        border-color: var(--color-primary);
+        box-shadow: 0 10px 40px rgba(0, 102, 204, 0.08);
       }
 
       .benefit-card .icon {
@@ -492,7 +502,7 @@
         height: 80%;
         background: var(--color-primary);
         filter: blur(100px);
-        opacity: 0.2;
+        opacity: 0.08;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) translateZ(0);
@@ -529,6 +539,12 @@
       .about-highlights li {
         font-weight: 600;
         font-size: 0.9rem;
+        color: var(--color-text);
+      }
+
+      .about-highlights li i {
+        color: var(--color-primary);
+        margin-right: 5px;
       }
 
       /* ==========================================================================
@@ -540,8 +556,8 @@
           var(--color-bg) 0%,
           var(--color-bg-alt) 100%
         );
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
       }
 
       .counter-number {
@@ -550,7 +566,7 @@
         font-family: var(--font-heading);
         color: var(--color-primary);
         line-height: 1;
-        text-shadow: var(--shadow-glow);
+        text-shadow: none;
       }
 
       .counter-text {
@@ -569,9 +585,11 @@
 
       .tag {
         padding: 0.5rem 1.5rem;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--color-bg-dark);
+        border: 1px solid var(--color-border);
         border-radius: 50px;
         font-size: 0.9rem;
+        color: var(--color-text);
       }
 
       /* ==========================================================================
@@ -592,7 +610,7 @@
         left: 10%;
         right: 10%;
         height: 2px;
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--color-border);
         z-index: 1;
       }
 
@@ -605,7 +623,7 @@
       .step-number {
         width: 60px;
         height: 60px;
-        background: var(--color-bg-dark);
+        background: var(--color-bg);
         border: 2px solid var(--color-primary);
         border-radius: 50%;
         display: flex;
@@ -615,7 +633,8 @@
         font-family: var(--font-heading);
         font-weight: 700;
         font-size: 1.2rem;
-        box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
+        color: var(--color-primary);
+        box-shadow: 0 0 15px rgba(0, 102, 204, 0.1);
       }
 
       .step h3 {
@@ -642,7 +661,7 @@
       .services-img-wrapper img {
         width: 100%;
         border-radius: 20px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
       }
 
       .services-grid {
@@ -715,7 +734,7 @@
 
       .testimonial-card {
         background: var(--color-bg-alt);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--color-border);
         padding: 2rem;
         border-radius: 12px;
         width: 350px;
@@ -724,8 +743,9 @@
       }
 
       .testimonial-card:hover {
-        border-color: rgba(37, 211, 102, 0.3);
+        border-color: var(--color-primary);
         transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.05);
       }
 
       .stars {
@@ -744,6 +764,7 @@
       .author {
         display: block;
         font-family: var(--font-heading);
+        color: var(--color-text);
       }
 
       .role {
@@ -767,34 +788,29 @@
    ========================================================================== */
       .mid-cta {
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 400px;
+        background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+        color: #ffffff;
+        text-align: center;
         overflow: hidden;
       }
 
-      .mid-cta-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+      .mid-cta h2 {
+        color: #ffffff;
       }
 
-      .mid-cta-bg img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .mid-cta p {
+        color: rgba(255, 255, 255, 0.9);
       }
 
-      .mid-cta-bg .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(8, 8, 8, 0.85);
+      .mid-cta .btn-primary {
+        background-color: #ffffff;
+        color: var(--color-primary);
+      }
+
+      .mid-cta .btn-primary:hover {
+        background-color: var(--color-bg-dark);
+        color: var(--color-primary-dark);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
       }
 
       /* ==========================================================================
@@ -808,7 +824,8 @@
         padding: 4rem 2rem;
         border-radius: 20px;
         margin-top: 3rem;
-        border: 1px solid rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
       }
 
       .map-marker-container {
@@ -856,6 +873,7 @@
       .location-info h4 {
         font-size: 1.1rem;
         margin-bottom: 1rem;
+        color: var(--color-text);
       }
 
       .location-info p {
@@ -885,46 +903,39 @@
    CTA Final
    ========================================================================== */
       .final-cta {
-        background: var(--color-bg-dark);
-        overflow: hidden;
+        background: var(--color-bg);
       }
 
-      .final-cta-split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-height: 600px;
+      .final-cta-card {
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: 24px;
+        padding: 5rem 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: 0 10px 40px rgba(0, 102, 204, 0.05);
       }
 
-      .final-cta-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .final-cta-content {
-        padding: 4rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .final-cta-content h2 {
-        font-size: clamp(2.5rem, 4vw, 3.5rem);
+      .final-cta-card h2 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
         margin-bottom: 1rem;
+        color: var(--color-text);
       }
 
-      .final-cta-content p {
+      .final-cta-card p {
         font-size: 1.2rem;
         color: var(--color-text-muted);
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       /* ==========================================================================
    Footer
    ========================================================================== */
       .footer {
-        background: #000;
+        background: var(--color-bg-dark);
         padding: 4rem 0 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: 1px solid var(--color-border);
       }
 
       .footer-container {
@@ -974,14 +985,16 @@
       }
 
       .footer-bottom p {
-        color: rgba(255, 255, 255, 0.3);
+        color: var(--color-text-muted);
+        opacity: 0.7;
         font-size: 0.8rem;
       }
 
       .footer-bottom .final-phrase {
         font-style: italic;
         margin-top: 0.5rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--color-text-muted);
+        opacity: 0.9;
       }
 
       /* ==========================================================================
@@ -1035,7 +1048,7 @@
       }
 
       .floating-whatsapp {
-        background-color: var(--color-primary);
+        background-color: #25d366;
         box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
         animation: floatPulse 2s infinite;
       }
@@ -1060,15 +1073,15 @@
 
       @keyframes btnPulse {
         0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+          box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.7);
         }
 
         70% {
-          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+          box-shadow: 0 0 0 15px rgba(0, 102, 204, 0);
         }
 
         100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+          box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
         }
       }
 
@@ -1272,7 +1285,7 @@
           height: calc(100vh - 70px);
           text-align: center;
           transition: 0.3s;
-          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
           padding-top: 2rem;
         }
 
@@ -1328,7 +1341,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -1694,15 +1707,7 @@
 
       <!-- CTA INTERMEDIÁRIO -->
       <section class="mid-cta section-padding">
-        <div class="mid-cta-bg">
-          <img
-            src="assets/[FOTO_PERSONAL_4]"
-            alt="Pronto para começar"
-            loading="lazy"
-          />
-          <div class="overlay"></div>
-        </div>
-        <div class="container text-center relative z-10 fade-up">
+        <div class="container text-center fade-up">
           <h2>Pronto para começar a sua evolução?</h2>
           <p>
             Mais de 150 alunos já deram o primeiro passo. Agora pode ser a sua
@@ -1765,16 +1770,9 @@
       </section>
 
       <!-- CTA FINAL -->
-      <section class="final-cta">
-        <div class="final-cta-split">
-          <div class="final-cta-img fade-right">
-            <img
-              src="assets/[FOTO_PERSONAL_5]"
-              alt="Seu próximo nível"
-              loading="lazy"
-            />
-          </div>
-          <div class="final-cta-content fade-left">
+      <section class="final-cta section-padding">
+        <div class="container text-center fade-up">
+          <div class="final-cta-card">
             <h2>Seu próximo nível começa no próximo treino.</h2>
             <p>Não espere o momento perfeito. Dê o primeiro passo.</p>
             <a
