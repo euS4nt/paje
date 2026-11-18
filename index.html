@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5efe5">
+  <meta name="description" content="Um convite especial para celebrar uma história de amor.">
+  <title>Nosso Grande Dia | Convite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main>
+    <section class="intro" id="intro" aria-label="Abrir convite">
+      <div class="intro-glow"></div>
+      <p class="eyebrow intro-eyebrow">Um convite especial</p>
+      <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Abrir o convite">
+        <div class="envelope-shadow"></div>
+        <div class="letter-peek">
+          <span class="script" data-bind="initials">A & M</span>
+          <span class="letter-line">com carinho, para você</span>
+        </div>
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal"><span data-bind="monogram">A</span></div>
+        </div>
+      </div>
+      <h1 class="intro-title">Uma história, <em>um sim</em>, infinitas memórias.</h1>
+      <p class="intro-hint"><span class="pulse-dot"></span> Toque no envelope para abrir</p>
+      <p class="intro-names" data-bind="coupleNames">Ana & Miguel</p>
+    </section>
+
+    <section class="experience" id="experience" aria-hidden="true">
+      <header class="book-topbar">
+        <span class="topbar-mark" data-bind="initials">A & M</span>
+        <span class="topbar-date" data-bind="dateShort">24 · 10 · 2027</span>
+        <button class="sound-toggle" id="soundToggle" type="button" aria-label="Ativar música ambiente" aria-pressed="false"><span class="sound-icon">♫</span><span class="sound-label">Som</span></button>
+      </header>
+
+      <div class="book-shell">
+        <div class="book-spine" aria-hidden="true"></div>
+        <div class="book-pages" id="bookPages" aria-live="polite"></div>
+        <button class="page-arrow prev" id="prevPage" type="button" aria-label="Página anterior"><span>←</span></button>
+        <button class="page-arrow next" id="nextPage" type="button" aria-label="Próxima página"><span>→</span></button>
+      </div>
+
+      <footer class="book-controls">
+        <button class="text-control" id="prevText" type="button">← Voltar</button>
+        <div class="page-progress"><span id="pageCounter">01 / 12</span><span class="progress-track"><i id="progressFill"></i></span></div>
+        <button class="text-control" id="nextText" type="button">Avançar →</button>
+      </footer>
+      <p class="swipe-hint" id="swipeHint">Deslize ou use as setas para folhear</p>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar fotografia">×</button>
+    <img id="lightboxImage" alt="Fotografia ampliada do casal">
+    <p id="lightboxCaption"></p>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/config.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/book.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
